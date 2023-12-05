@@ -16,6 +16,7 @@ jobs:
           token: ${{ secrets.RENOVATE_TOKEN }}
         env:
           RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
-          GITHUB_COM_TOKEN: ${{ secrets.GITHUB_COM_TOKEN }}
+          GITHUB_COM_TOKEN: ${{ secrets.GITH_COM_TOKEN }}
+          RENOVATE_CLIENTID: ${{ secrets.RENOVATE_CLIENTID }}
           RENOVATE_PASSWORD: ${{ secrets.RENOVATE_PASSWORD }}
           LOG_LEVEL: debug
