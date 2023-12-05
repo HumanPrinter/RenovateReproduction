@@ -1,0 +1,54 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": ["config:best-practices"],
+    "azureWorkItemId": 406,
+    "pre-commit": {
+      "enabled": true
+    },
+    "packageRules": [
+      {
+        "matchUpdateTypes": [
+          "minor",
+          "patch",
+          "pin",
+          "digest"
+        ],
+        "automerge": true
+      },
+      {
+        "matchPackagePatterns": ["pre-commit-hooks"],
+        "groupName": ""
+      },
+      {
+        "matchPackageNames": [
+          "python"
+        ],
+        "allowedVersions": "<3.12"
+      }
+    ],
+    "nuget": {
+      "registryUrls": [
+        "https://api.nuget.org/v3/index.json"
+      ]
+    },
+    "customManagers": [
+      {
+        "customType": "regex",
+        "fileMatch": [
+          "(^|/)pipelines/.*\\.ya?ml"
+        ],
+        "matchStringsStrategy": "any",
+        "matchStrings": [
+          "task:\\s+(?<depName>[^\\@]+)\\@(?<currentValue>.*)$"
+        ],
+        "datasourceTemplate": "custom.azuredevops_pipelinetasks",
+        "versioningTemplate": "loose"
+      }
+    ],
+    "customDatasources": {
+      "azuredevops_pipelinetasks": {
+        "defaultRegistryUrlTemplate": "https://humanprinter.github.io//{{packageName}}.txt",
+        "format": "plain"
+      }
+    }
+  }

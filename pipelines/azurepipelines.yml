@@ -1,0 +1,31 @@
+name: $(Date:yyyyMM).$(Rev:r)-$(SourceBranchName)
+
+trigger:
+  branches:
+    include:
+    - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+stages:
+- stage: Run
+  displayName: Do something
+  jobs:
+  - job: run
+    displayName: Do something
+    
+    steps:
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '3.11'
+
+    - task: PythonScript@0
+      inputs:
+        scriptPath: src/script.py
+
+    - task: Bash@2
+      inputs:
+        targetType: inline
+        script: |
+          echo "Hallo World"
