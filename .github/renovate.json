@@ -39,7 +39,7 @@
         ],
         "matchStringsStrategy": "any",
         "matchStrings": [
-          "task:\\s+(?<depName>[^\\@]+)\\@(?<currentValue>.*)$"
+          "task:\\s+(?<depName>[^\\@]+)\\@(?<currentValue>\\d+)"
         ],
         "datasourceTemplate": "custom.azuredevops_pipelinetasks",
         "versioningTemplate": "loose"
