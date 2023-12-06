@@ -12,7 +12,7 @@ jobs:
         uses: renovatebot/github-action@af0eb69ad0365d53c161661d5c8a5ba5f12545d0 # v39.2.0
         with:
           configurationFile: config.js
-          token: ${{ secrets.RENOVATE_TOKEN }}
+          token: ${{ secrets.GITH_COM_TOKEN }}
         env:
           RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
           GITHUB_COM_TOKEN: ${{ secrets.GITH_COM_TOKEN }}
