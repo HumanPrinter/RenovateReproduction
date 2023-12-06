@@ -1,6 +1,6 @@
 module.exports = {
     platform: 'github',
-    token: process.env.TOKEN,
+    token: process.env.GITH_COM_TOKEN,
     repositories: [
         'HumanPrinter/RenovateReproduction'
     ]
